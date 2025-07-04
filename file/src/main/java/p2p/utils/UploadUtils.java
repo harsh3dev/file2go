@@ -3,12 +3,13 @@ package p2p.utils;
 import java.util.Random;
 
 public class UploadUtils {
-    public static int getPort(){
-        int START_PORT = 49152;
-        int END_PORT = 65535;
 
-        Random rand = new Random();
+    public static Integer generateCode(){
+        int DYNAMIC_STARTING_PORT = 49152;
+        int DYNAMIC_ENDING_PORT = 65535;
 
-        return rand.nextInt(END_PORT - START_PORT) + START_PORT;
+        Random random = new Random();
+        return random.nextInt(DYNAMIC_ENDING_PORT-DYNAMIC_STARTING_PORT) + DYNAMIC_STARTING_PORT;
     }
+
 }
